@@ -59,7 +59,7 @@ class LinkedList:
 
         # Checks if the first node is the element sought
         if node.data == data:
-            self.head = None
+            self.head = node.next
         else:
             previous_node = node
             node = node.next
@@ -88,15 +88,42 @@ class LinkedList:
 
         return " --> ".join(list_nodes)
 
+##########################################################################################
 
+# Exemplo de uso
+
+# Lista de atividades
+# 1 Ir ao banco
+# 2 Fazer compras
+# 3 Levar carro na oficina
+# 4 Estudar matemática
+
+# Instanciando a lista encadeada
 Linked_List = LinkedList()
 
-Linked_List.add_node_start_list('c')
-Linked_List.add_node_start_list('b')
-Linked_List.add_node_start_list('a')
+# Adicionando tarefas em ordem de prioridades
+Linked_List.add_node_end_list('Ir ao banco')
+Linked_List.add_node_end_list('Fazer compras')
+Linked_List.add_node_end_list('Levar carro na oficina')
+Linked_List.add_node_end_list('Estudar matemática')
 
+# Impressão da lista
 print(Linked_List)
 
-Linked_List.remove_node('c')
+# Remover uma tarefa
+Linked_List.remove_node('Levar carro na oficina')
 
+# Impressão da lista
+print(Linked_List)
+
+# Adicionando uma nova atividade no início da lista
+Linked_List.add_node_start_list('Planejamento semanal')
+
+# Impressão da lista
+print(Linked_List)
+
+# Adicionando atividade em algum lugar definido na lista
+Linked_List.add_node_after_target_node('Aula de programação', "Planejamento semanal")
+
+# Impressão da lista
 print(Linked_List)
