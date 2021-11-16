@@ -59,7 +59,7 @@ class Stack():
         else:
             return "the list is empty"
 
-        
+###################################################################################################   
        
 # instantiate objects
 book1 = Node("Book_01")
@@ -85,13 +85,10 @@ print("Top of the stack:", stack.stack_top())
 # printing the stack size
 print("the size of the stack:", stack.stack_size())
 
-print()
-print()
-
 # removing an object
 stack.pop()
 
 print(stack)
-print()
+
 # printing the stack size
 print("the size of the stack:", stack.stack_size())
