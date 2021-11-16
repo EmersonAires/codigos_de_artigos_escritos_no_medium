@@ -29,7 +29,16 @@ class Stack():
         else:
             print("the list is empty")
 
-    def size_stack(self):
+    def stack_top(self):
+        '''
+        return stack top
+        '''
+        if self.top != None:
+            return self.top.data
+        else:
+            return "the list is empty"
+
+    def stack_size(self):
         '''
         return stack size
         '''
@@ -41,43 +50,48 @@ class Stack():
         '''
         if self.top != None:
             node = self.top
-            list_node_stack = []
+            stack_node_list = []
             while node != None:
-                list_node_stack.append(node.data)
+                stack_node_list.append(node.data)
                 node = node.next
 
-        return "\n-------\n".join(list_node_stack)
-       
-# Instaciar nós
-node1 = Node("Book_01")
-node2 = Node("Book_02")
-node3 = Node("Book_03")
-node4 = Node("Book_04")
+            return "\n-------\n".join(stack_node_list)
+        else:
+            return "the list is empty"
 
-# Instaciar Pilha
+        
+       
+# instantiate objects
+book1 = Node("Book_01")
+book2 = Node("Book_02")
+book3 = Node("Book_03")
+book4 = Node("Book_04")
+
+# Instantiate stack
 stack = Stack()
 
-# Empilhando nós
-stack.push(node1)
-stack.push(node2)
-stack.push(node3)
-stack.push(node4)
+# stacking objects
+stack.push(book1)
+stack.push(book2)
+stack.push(book3)
+stack.push(book4)
 
-# Imprimindo a pilha
+# printing the stack
 print(stack)
 
+# printing the top of the stack
+print("Top of the stack:", stack.stack_top())
+
+# printing the stack size
+print("the size of the stack:", stack.stack_size())
+
+print()
 print()
 
-# Imprimindo o tamanho da lista
-print("the size of the stack:", stack.size_stack())
-
-print()
-
-# Removendo um objeto
+# removing an object
 stack.pop()
+
 print(stack)
-
 print()
-
-# Imprimindo o tamanho da lista
-print("the size of the stack:", stack.size_stack())
+# printing the stack size
+print("the size of the stack:", stack.stack_size())
